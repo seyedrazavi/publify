@@ -5,10 +5,12 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 
-file = File.join(Rails.root, "config", "secret.token")
+# file = File.join(Rails.root, "config", "secret.token")
 
-if File.exists?(file)
-  Publify::Application.config.secret_key_base = File.open(file, "r") { |f| f.read.delete("\n") }
-else
-  Publify::Application.config.secret_key_base = $default_token
-end
+# if File.exists?(file)
+#   Publify::Application.config.secret_key_base = File.open(file, "r") { |f| f.read.delete("\n") }
+# else
+#   Publify::Application.config.secret_key_base = $default_token
+# end
+
+Publify::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
