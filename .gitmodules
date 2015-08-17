@@ -1,0 +1,3 @@
+[submodule "themes/purecss"]
+	path = themes/purecss
+	url = git@github.com:seyedrazavi/themes-purecss.git
