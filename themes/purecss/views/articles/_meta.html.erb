@@ -1,0 +1,7 @@
+<p class="post-meta">
+	By <% if article.user.twitter.present? %><a href="http://twitter.com/<%=article.user.twitter%>" class="post-author"><%=article.user.nickname%></a>
+	<% else %><span class="post-author"><%=article.user.nickname%></span>
+	<% end %><% unless article.tags.empty? %> under <% article.tags.each do |tag| %><%=link_to tag.display_name, tag.permalink_url(nil, true), :rel => "tag", :class => "post-category post-category-#{tag.name}"%><% end %>
+	<% end %> on <%=display_date_and_time(article.published_at)%>
+</p>
+

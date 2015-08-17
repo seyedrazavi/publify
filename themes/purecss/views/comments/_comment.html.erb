@@ -1,0 +1,13 @@
+<div id="comment-<%= comment.id %>" class="pure-g">
+  <div class="pure-u">
+    <%= avatar_tag(:email => comment.email, :url => comment.url) %>
+  </div>
+  <div class="pure-u-3-4">
+    <h5 class="comment-author"><%= (comment.url.blank?) ? h(comment.author) : link_to(h(comment.author), comment.url).nofollowify %></h5>
+    <h5 class="comment-date"><%= display_date_and_time comment.created_at %></h5>
+    <%= comment.html %>
+    <%- unless comment.published %>
+    <div class="spamwarning"><%= t(".this_comment_has_been_flagged_for_moderator_approval") %></div>
+    <%- end %>
+  </div>
+</div>

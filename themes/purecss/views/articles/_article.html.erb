@@ -1,0 +1,9 @@
+<article id="article-<%= article.id %>" class='h-entry hentry h-as-note post'>
+  <h2 class='content-subhead page-header p-name entry-title post-title'><%= (controller.controller_name == 'redirect') ? article.title : link_to_permalink(article,article.title) %></h2>
+  <%= render 'articles/meta', article: article %>    
+  <hr/>
+  <div class='post-description e-content entry-content article'>
+    <%= render 'articles/protected_article_content', { :article => article } %>
+  </div>
+
+</article>

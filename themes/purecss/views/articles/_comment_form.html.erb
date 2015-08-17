@@ -1,0 +1,26 @@
+<%= form_tag @article.comment_url, :class => 'pure-form pure-form-aligned' do %>
+<div id='commentform'>
+	<fieldset>
+	<legend>Respond to <em><%=@article.title%></em></legend>
+	<div class='control-group'>
+		<%= text_field "comment", "author", :class => 'pure-input-1', :placeholder => t(".your_name"), :required => true %>  	
+	</div>
+	<div class='control-group'>
+		<%= text_field "comment", "email", :class => 'pure-input-1', :placeholder => t(".email_address"), :required => true %>
+	</div>
+	<div class='control-group'>
+		<%= text_field "comment", "url", :class => 'pure-input-1', :placeholder => t(".your_website") %>
+	</div>
+	<div class='control-group'>
+		<%= text_area 'comment', 'body', :rows => 8, :class => 'pure-input-1' %>
+	</div>
+
+	<% if this_blog.use_recaptcha %>
+	<div class='control-group'><%= raw recaptcha_tags :ajax => true %></div>
+	<% end %>
+	<div class='form-actions'>
+		<button type='submit' id='form-submit-button' class='pure-button pure-button-primary'><%= t('.comment') %></button>
+	</div>
+	</fieldset>
+</div>
+<% end %>
