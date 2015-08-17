@@ -64,9 +64,6 @@
             <div class="footer">
                 <div class="pure-menu pure-menu-horizontal">
                     <ul>
-                        <li class="pure-menu-item">
-                        <%= link_to("<img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-medium_2x.png' alt='follow us in feedly' width='71' height='28'>".html_safe, "http://feedly.com/i/subscription/feed/#{feed_atom}", :target => 'blank') %>
-                        </li>
                     <%- Page.published.each do |page| %>
                         <li class="pure-menu-item">
                             <%= link_to_permalink(page, page.title, nil, 'pure-menu-link') %>
