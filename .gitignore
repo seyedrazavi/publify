@@ -1,6 +1,3 @@
-config/database.yml
-config/mail.yml
-config/timezone.yml
 config/secret.token
 *.log
 *~
@@ -22,13 +19,9 @@ tmp/*
 /coverage/
 nbproject
 public/cache/*
-Gemfile.lock
 .rbenv-version
 .ruby-version
 .bundle/
 .sass-cache/
 /vendor/bundle
-/themes/*
-!/themes/bootstrap-2
-!/themes/plain
 gems/
