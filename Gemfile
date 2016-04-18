@@ -7,6 +7,8 @@ gem 'pg'
 gem 'puma' # Change this to another web server if you want (ie. unicorn, passenger, puma...)
 gem 'rails_12factor'
 
+end
+
   require 'yaml'
   env = ENV['RAILS_ENV'] || 'development'
   dbfile = File.expand_path('../config/database.yml', __FILE__)
@@ -33,8 +35,7 @@ gem 'rails_12factor'
   else
     raise "Don't know what gem to use for adapter #{adapter}"
   end
-end
-
+  
 gem 'rails', '~> 4.2.5'
 
 # Use SCSS for stylesheets
